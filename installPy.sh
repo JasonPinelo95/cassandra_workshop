@@ -14,11 +14,11 @@ cp ~/.profile tmp
 (echo 'export PYENV_ROOT="$HOME/.pyenv"';cat tmp) > ~/.profile ;rm tmp
 echo 'eval "$(pyenv init --path)"' >> ~/.profile
 
-source ~/.profile
-exec "$SHELL"
-
-pyenv install -v 3.9.0
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Creating environment
+pyenv install -v 3.9.0
 pyenv virtualenv 3.9.0 cassandra
 pyenv local cassandra
