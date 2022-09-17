@@ -22,4 +22,3 @@ pyenv install -v 3.9.0
 # Creating environment
 pyenv virtualenv 3.9.0 cassandra
 pyenv local cassandra
-~
