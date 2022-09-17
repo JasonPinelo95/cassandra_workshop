@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+        cassandra_one:
+                container_name: cassandra_one
+                image: cassandra:latest
+                networks:
+                        - cassandra_network
+
+        cassandra_two:
+                container_name: cassandra_two
+                image: cassandra:latest
+                networks:
+                        - cassandra_network
+                depends_on:
+                        - cassandra_one
+                environment:
+                        - CASSANDRA_SEEDS=cassandra_one
+
+networks:
+        cassandra_network:
+                name: cassandra_network
