@@ -24,7 +24,8 @@ This workshop is a hands-on introduction to cassandra. It is designed to be run 
 * Google Cloud Platform account
 * Basic knowledge of Linux
 * Bash shell
-* Network knowledge
+* Networking knowledge
+* SSH knowledge
 
 ## Running the workshop
 
@@ -45,7 +46,7 @@ Select the following options:
 
 SSH into the VM instance. You can do this by clicking on the SSH button in the Google Cloud Platform console.
 
-Optional: For Mac OS X and Linux users, you can also do this by SSHing into the VM in your terminal. You can do this by running the following command:
+_**Optional: For Mac OS X and Linux users, you can also do this by SSHing into the VM in your terminal. You can do this by running the following command:**_
 
 ```$ ssh -i ~/.ssh/<PATH_TO_PUBLIC_KEY> <USERNAME>@<EXTERNAL_IP> ```
 
