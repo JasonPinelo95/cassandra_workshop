@@ -53,7 +53,7 @@ Once you are SSHed into the VM, run the following commands one by one:
 
 ```$ sudo apt-get update```
 
-```$ sudo apt-get install -y git```
+```$ sudo apt-get upgrade```
 
 ```$ git clone https://github.com/JasonPinelo95/cassandra_workshop.git```
 
