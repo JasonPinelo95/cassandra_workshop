@@ -79,5 +79,9 @@ Once you are SSHed into the VM, run the following commands one by one:
 
 ```$ docker-compose up -d```
 
+After the containers are up and running, you can check the status of the containers by running the following command:
+
+```$ docker-compose exec cassandra_one nodetool status```
+
 
 
