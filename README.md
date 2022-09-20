@@ -95,6 +95,8 @@ Then setup an SSH tunnel to the VM instance. You can do this by running the foll
 
 Open a browser and go to [localhost:8080](localhost:8080). You should see the Jupyter Notebook interface.
 
+Follow the instructions in the [notebook](intro_to_cassandra.ipynb).
+
 
 
 
