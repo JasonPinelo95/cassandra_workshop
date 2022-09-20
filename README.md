@@ -42,6 +42,7 @@ Select the following options:
 * Zone: us-central1-c
 * Machine type: e2-standard-2 (2 vCPUs, 8 GB memory)
 * Boot disk: Ubuntu 18.04 LTS (x86_64)
+* Allow HTTP traffic and Allow HTTPS traffic
 * Click on "Create"
 
 Go to Firewall rules [here](https://console.cloud.google.com/networking/firewalls/list).
@@ -80,7 +81,7 @@ Once you are SSHed into the VM, run the following commands one by one:
 
 ```$ ./installPy.sh```
 
-```$ source ~/.bashrc```
+```$ source ~/.profile```
 
 ```$ pyenv local cassandra```
 
@@ -89,11 +90,11 @@ Once you are SSHed into the VM, run the following commands one by one:
 
 ### Running the workshop
 
-```$ docker-compose up -d```
+```$ sudo docker-compose up -d```
 
 After the containers are up and running, you can check the status of the containers by running the following command:
 
-```$ docker-compose exec cassandra_one nodetool status```
+```$ sudo docker-compose exec cassandra_one nodetool status```
 
 
 
