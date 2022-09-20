@@ -6,12 +6,16 @@ services:
                 image: cassandra:latest
                 networks:
                         - cassandra_network
+                ports:
+                        - 9042:9042
 
         cassandra_two:
                 container_name: cassandra_two
                 image: cassandra:latest
                 networks:
                         - cassandra_network
+                ports:
+                        - 9043:9042
                 depends_on:
                         - cassandra_one
                 environment:
