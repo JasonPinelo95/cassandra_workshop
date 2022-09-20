@@ -44,6 +44,18 @@ Select the following options:
 * Boot disk: Ubuntu 18.04 LTS (x86_64)
 * Click on "Create"
 
+Go to Firewall rules [here](https://console.cloud.google.com/networking/firewalls/list).
+
+Click on "Create Firewall Rule".
+
+Select the following options:
+* Name: cassandra-workshop
+* Priority: 1
+* Direction of traffic: Ingress
+* Range of IPv4 addresses: 0.0.0.0/0
+* Protocols and ports: tcp: 8080
+* click on "Create"
+
 SSH into the VM instance. You can do this by clicking on the SSH button in the Google Cloud Platform console.
 
 _**Optional: For Mac OS X and Linux users, you can also do this by SSHing into the VM in your terminal. You can do this by running the following command:**_
