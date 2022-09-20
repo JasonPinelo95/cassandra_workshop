@@ -30,7 +30,10 @@ This workshop is a hands-on introduction to cassandra. It is designed to be run 
 ## Running the workshop
 
 ### Setup
-In order to run the workshop, you need to have a Google Cloud Platform account. You can create one for free [here](https://cloud.google.com/free/).
+
+Generate your ssh keys, go to [sshKeys.md](sshKeys.md) for guidance.
+
+You need to have a Google Cloud Platform account. You can create one for free [here](https://cloud.google.com/free/).
 
 You also need to have a Google Cloud Platform project. You can create one [here](https://console.cloud.google.com/projectcreate).
 
@@ -42,26 +45,12 @@ Select the following options:
 * Zone: us-central1-c
 * Machine type: e2-standard-2 (2 vCPUs, 8 GB memory)
 * Boot disk: Ubuntu 18.04 LTS (x86_64)
-* Allow HTTP traffic and Allow HTTPS traffic
+* On Advanced Options -> Security -> Manage Access, click on **+ ADD ITEM** and copy-paste your ssh public key.
 * Click on "Create"
 
-Go to Firewall rules [here](https://console.cloud.google.com/networking/firewalls/list).
+SSH into the VM instance. You can do this by opening a terminal and running the following command:
 
-Click on "Create Firewall Rule".
-
-Select the following options:
-* Name: cassandra-workshop
-* Priority: 1
-* Direction of traffic: Ingress
-* Range of IPv4 addresses: 0.0.0.0/0
-* Protocols and ports: tcp: 8080
-* click on "Create"
-
-SSH into the VM instance. You can do this by clicking on the SSH button in the Google Cloud Platform console.
-
-_**Optional: For Mac OS X and Linux users, you can also do this by SSHing into the VM in your terminal. You can do this by running the following command:**_
-
-```$ ssh -i ~/.ssh/<PATH_TO_PUBLIC_KEY> <USERNAME>@<EXTERNAL_IP> ```
+```$ ssh -i ~/.ssh/<NAME_OF_PUBLIC_KEY> <USERNAME>@<EXTERNAL_IP> ```
 
 Once you are SSHed into the VM, run the following commands one by one:
 
@@ -83,9 +72,9 @@ Once you are SSHed into the VM, run the following commands one by one:
 
 ```$ source ~/.profile```
 
-```$ pyenv local cassandra```
-
 ```$ ./installDependencies.sh```
+
+```$ source ~/.profile```
 
 
 ### Running the workshop
@@ -95,6 +84,17 @@ Once you are SSHed into the VM, run the following commands one by one:
 After the containers are up and running, you can check the status of the containers by running the following command:
 
 ```$ sudo docker-compose exec cassandra_one nodetool status```
+
+After checking the status of the containers, run:
+
+```$ jupyter-notebook --no-browser --port=8080```
+
+Then setup an SSH tunnel to the VM instance. You can do this by running the following command:
+
+```$ ssh -i ~/.ssh/<NAME_OF_PUBLIC_KEY> -L 8080:localhost:8080 <USERNAME>@<EXTERNAL_IP>```
+
+Open a browser and go to [localhost:8080](localhost:8080). You should see the Jupyter Notebook interface.
+
 
 
 
