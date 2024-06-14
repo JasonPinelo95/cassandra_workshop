@@ -50,7 +50,7 @@ Select the following options:
 
 SSH into the VM instance. You can do this by opening a terminal and running the following command:
 
-```$ ssh -i ~/.ssh/<NAME_OF_PRIVATE_KEY> <USERNAME>@<EXTERNAL_IP> ```
+```$ ssh -i ~/.ssh/<NAME_OF_PUBLIC_KEY> <USERNAME>@<EXTERNAL_IP> ```
 
 Once you are SSHed into the VM, run the following commands one by one:
 
